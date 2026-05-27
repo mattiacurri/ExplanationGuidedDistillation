@@ -1,0 +1,10 @@
+\begin{abstract}
+Can explanations serve as a useful supervision signal for knowledge distillation in vision-language models?
+We investigate this question in a plug-in replacement setting: a ViT student is trained to replace the visual module of a VLM, while the original language model remains fixed.
+This setting is stricter than standalone embedding evaluation because the distilled representation must still support image-conditioned generation after it is inserted back into the multimodal pipeline.
+We compare global feature reconstruction with explanation-guided token reconstruction, where Grad-CAM saliency from a frozen teacher probe weights the visual tokens that the student should match most strongly.
+On Mini-ImageNet image-description prompts, three independent VLM judges compare anonymized teacher and student answers while observing the original image.
+On the shared subset of 437 images for which every judge returned a valid preference for every variant, the teacher remains preferred overall; however, every explanation-guided objective improves over plain global reconstruction.
+Per-judge trends and qualitative examples indicate that this gain is associated with preserving localized visual evidence and avoiding severe grounding failures, while errors requiring broader scene context remain.
+These findings show that explanations provide a useful distillation signal, although the distilled visual module is not yet a faithful replacement for the teacher.
+\end{abstract}

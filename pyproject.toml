@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "compvis"
+version = "0.1.0"
+description = "Work in progress"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # transformers 4.57.0.dev0+ required for Qwen3.5 (qwen3_5 model type)
+    "transformers @ git+https://github.com/huggingface/transformers.git",
+    # accelerate: needed for device_map= support
+    "accelerate>=1.0.0",
+    # torch: install manually with the appropriate CUDA/CPU variant
+    # e.g. uv add torch --index https://download.pytorch.org/whl/cu124
+    "torch>=2.3.0",
+    "torchvision>=0.18.0",
+    # HuggingFace datasets for miniImageNet
+    "datasets>=3.0.0",
+    # image handling
+    "pillow>=10.0.0",
+    # numerical output
+    "numpy>=1.26.0",
+    "matplotlib>=3.10.8",
+    "timm>=1.0.26",
+    "tqdm>=4.67.3",
+    "wandb>=0.19.0",
+    "bert-score>=0.3.13",
+    "bitsandbytes>=0.43.0",
+    "requests>=2.32.0",
+    # Phase 2 — feature naming via local Ollama VLM
+    "ollama>=0.4.0",
+    # Phase 2 — CLIP-based name validation
+    "open_clip_torch>=2.24.0",
+    # additional libraries for structured JSON output
+    "instructor",
+    "pydantic",
+    # Phase 2 — Gemini API alternative naming client
+    "google-genai>=1.0.0",
+]
+
+[project.scripts]
+compvis-preprocess-mini-imagenet = "src.cli.preprocess_mini_imagenet:main"
+compvis-finetune-vlm-vit-mini-imagenet = "src.cli.finetune_vlm_vit_mini_imagenet:main"
+compvis-run-expl-vit-distillation = "src.cli.run_expl_vit_distillation_pipeline:main"
+compvis-qwen-student-prompt-report = "src.cli.qwen_student_prompt_report:main"
+compvis-augment-qwen-report-baselines = "src.cli.augment_qwen_report_baselines:main"
+compvis-bertscore-qwen-report = "src.cli.bertscore_qwen_report:main"
+compvis-llm-judge-qwen-report = "src.cli.llm_judge_qwen_report:main"
+compvis-vlm-judge-qwen-report = "src.cli.vlm_judge_qwen_report:main"
+compvis-aggregate-qwen-judges = "src.cli.aggregate_qwen_judges:main"
+compvis-upload-wandb-artifact = "src.cli.upload_wandb_artifact:main"
+compvis-arena-ui = "src.ui.arena:main"
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-gpu" },
+]
+torchvision = [
+    { index = "pytorch-gpu" },
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[[tool.uv.index]]
+name = "pytorch-gpu"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true

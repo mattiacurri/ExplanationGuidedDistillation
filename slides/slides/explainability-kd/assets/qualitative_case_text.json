@@ -1,0 +1,66 @@
+{
+  "bolete": {
+    "source_index": 4914,
+    "baseline": {
+      "label": "Global MSE",
+      "variant": "base_vitbase_mse",
+      "full_text": "The image shows a close-up of a mushroom with a distinctive appearance. The cap of the mushroom is light brown and has a slightly textured surface, with some areas appearing more raised or bumpy than others. The gills underneath the cap are visible and have a similar texture to the cap, with some areas being more pronounced than others. The stem of the mushroom is also visible, showing a darker brown color that contrasts with the lighter cap. The background appears to be a natural setting, possibly a forest floor, with some green foliage and soil visible around the mushroom.",
+      "excerpt": "The cap of the mushroom is light brown and has a slightly textured surface, with some areas appearing more raised or bumpy than others."
+    },
+    "guided": {
+      "label": "Explanation-guided",
+      "variant": "mean_vitbase_expl_only",
+      "full_text": "The image shows a close-up of a mushroom with a reddish-brown cap. The cap has a rough, textured surface with small, raised spots and ridges. The edges of the cap appear to be slightly curled inward. The background is blurred but appears to be a natural setting with green foliage, suggesting that the mushroom is growing in a forest or woodland area. The lighting in the image highlights the texture and color of the mushroom cap.",
+      "excerpt": "The cap has a rough, textured surface with small, raised spots and ridges. The edges of the cap appear to be slightly curled inward."
+    },
+    "reading": "Guidance retains the reddish, raised cap texture that the baseline describes more generically."
+  },
+  "mixing_bowl": {
+    "source_index": 3287,
+    "baseline": {
+      "label": "Global MSE",
+      "variant": "base_vitbase_mse",
+      "full_text": "The image shows a pair of red high-heeled shoes with white trim and a pointed toe. The shoes are placed on a wooden surface, and there is a patterned wallpaper in the background featuring a mix of geometric shapes and floral designs. The overall setting appears to be indoors, possibly in a room with a decorative wall.",
+      "excerpt": "The image shows a pair of red high-heeled shoes with white trim and a pointed toe."
+    },
+    "guided": {
+      "label": "Explanation-guided",
+      "variant": "mean_vitbase_expl_only",
+      "full_text": "The image shows three bowls placed on a surface. The bowls are of different colors: one is red, another is brown, and the third is a combination of both colors. They appear to be ceramic or porcelain, with smooth, glossy surfaces. The background features a patterned fabric or wallpaper with a floral design. The overall setting suggests a kitchen or dining area.",
+      "excerpt": "The image shows three bowls placed on a surface. The bowls are of different colors: one is red, another is brown, and the third is a combination of both colors."
+    },
+    "reading": "Guidance recovers the visible containers instead of hallucinating shoes."
+  },
+  "triceratops_scene": {
+    "source_index": 143,
+    "baseline": {
+      "label": "Teacher VLM",
+      "variant": "base_vitbase_mse",
+      "full_text": "The image shows a person standing next to a large, detailed dinosaur skull mounted on a stand. The skull appears to be that of a Triceratops, characterized by its three prominent horns and frill. The person is wearing a black jacket and a hat, and they are looking up at the dinosaur skull with a curious expression. In the background, there is a window with a view of snow outside, suggesting a cold, winter setting. The room has wooden trim and a radiator below the window.",
+      "excerpt": "The image shows a person standing next to a large, detailed dinosaur skull mounted on a stand. The skull appears to be that of a Triceratops, characterized by its three prominent horns and frill."
+    },
+    "guided": {
+      "label": "Explanation-guided",
+      "variant": "mean_vitbase_expl_only",
+      "full_text": "The image shows a close-up of a dinosaur skull, specifically that of a Triceratops. The skull is displayed in a museum setting, with a window in the background allowing natural light to illuminate the specimen. The Triceratops skull features three prominent horns on top and a large frill around its neck. The texture and details of the fossil are clearly visible, showcasing the intricate bone structure and the unique features of this prehistoric creature.",
+      "excerpt": "The image shows a close-up of a dinosaur skull, specifically that of a Triceratops."
+    },
+    "reading": "The student identifies the Triceratops, but omits the nearby person and much of the scene."
+  },
+  "triceratops_skeleton": {
+    "source_index": 148,
+    "baseline": {
+      "label": "Global MSE",
+      "variant": "base_vitbase_mse",
+      "full_text": "I'm sorry, but I cannot see any image attached to your message. Could you please provide more information or rephrase your question?",
+      "excerpt": "I'm sorry, but I cannot see any image attached to your message. Could you please provide more information or rephrase your question?"
+    },
+    "guided": {
+      "label": "Explanation-guided",
+      "variant": "mean_vitbase_expl_only",
+      "full_text": "The image depicts a dinosaur skeleton on display in what appears to be a museum or exhibition hall. The skeleton is mounted on a stand and is positioned in a standing posture, with its legs spread apart and arms outstretched. The bones are clearly visible, showcasing the intricate structure of the dinosaur's body. The background includes other exhibits and possibly informational plaques or displays, indicating that this is an educational setting. The lighting highlights the details of the fossil, making it a focal point for visitors.",
+      "excerpt": "The image depicts a dinosaur skeleton on display in what appears to be a museum or exhibition hall."
+    },
+    "reading": "Guidance restores a usable visual answer where global MSE fails to acknowledge the image."
+  }
+}

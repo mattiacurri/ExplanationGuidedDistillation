@@ -1,0 +1,11 @@
+{
+  "name": "arena-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

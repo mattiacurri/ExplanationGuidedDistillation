@@ -1,0 +1,15 @@
+\backcite {qwen2025vl}{{1}{1}{section.1}}
+\backcite {dosovitskiy2021image}{{1}{1}{section.1}}
+\backcite {selvaraju2017gradcam}{{1}{1}{section.1}}
+\backcite {qwen2025vl}{{2}{2}{section*.2}}
+\backcite {radford2021clip}{{2}{2}{section*.2}}
+\backcite {li2023blip2}{{2}{2}{section*.2}}
+\backcite {liu2023llava}{{2}{2}{section*.2}}
+\backcite {hinton2015distilling}{{2}{2}{section*.3}}
+\backcite {romero2015fitnets}{{2}{2}{section*.3}}
+\backcite {zagoruyko2017attention}{{2}{2}{section*.3}}
+\backcite {selvaraju2017gradcam}{{2}{2}{section*.4}}
+\backcite {zagoruyko2017attention}{{2}{2}{section*.4}}
+\backcite {qwen2026qwen35}{{5}{3.4}{subsection.3.4}}
+\backcite {vteam2025glm45v}{{5}{3.4}{subsection.3.4}}
+\backcite {yu2025minicpmv45}{{5}{3.4}{subsection.3.4}}
