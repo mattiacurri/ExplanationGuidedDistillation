@@ -12,12 +12,19 @@ import qualitativeCaseText from './assets/qualitative_case_text.json';
 
 // === Design system ===
 export const design: DesignSystem = {
-  palette: { bg: '#fdf5ec', text: '#2c1810', accent: '#d4602a' },
+  palette: {
+    bg: '#fdf5ec',
+    text: '#2c1810',
+    accent: '#d4602a',
+  },
   fonts: {
     display: 'Georgia, "Times New Roman", serif',
     body: '-apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
   },
-  typeScale: { hero: 110, body: 36 },
+  typeScale: {
+    hero: 64,
+    body: 36,
+  },
   radius: 8,
 };
 
@@ -110,7 +117,7 @@ const Cover: Page = () => (
     <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 900, height: 500, borderRadius: '50%', background: `radial-gradient(ellipse, ${amber}15, transparent 70%)`, animation: 'pulseGlow 4s ease-in-out infinite', pointerEvents: 'none' }} />
     <div style={{ textAlign: 'center', maxWidth: 1300, position: 'relative', zIndex: 1 }}>
       <h1 style={{ fontFamily: 'var(--osd-font-display)', fontSize: 'var(--osd-size-hero)', fontWeight: 900, margin: 0, lineHeight: 1.12, ...riseIn(0.25) }}>
-        Explanation-Guided<br />Knowledge Distillation
+        Look Where It Matters:<br />Distilling Vision Through Explanations
       </h1>
       <p style={{ fontSize: 34, color: muted, marginTop: 44, lineHeight: 1.5, ...riseIn(0.5) }}>
         Can explainability provide a useful training signal<br />for distilling vision-language models?
@@ -342,36 +349,44 @@ const NormSquared = ({ children }: { children: React.ReactNode }) => (
   </msubsup>
 );
 
+const equationStyle = { fontSize: 46, color: 'var(--osd-text)', whiteSpace: 'nowrap' };
+
 const Equation = ({ objective }: { objective: 'global' | 'explanation' | 'combined' }) => {
   if (objective === 'global') {
     return (
-      <math display="block" aria-label="Global MSE loss" style={{ fontSize: 45, color: 'var(--osd-text)' }}>
-        <LossName subscript="global" /><mo>=</mo>
-        <NormSquared>
-          <mfrac><mn>1</mn><mi>N</mi></mfrac><Sum /><IndexedVariable value="s" />
-          <mo>&#x2212;</mo>
-          <mfrac><mn>1</mn><mi>N</mi></mfrac><Sum /><IndexedVariable value="t" />
-        </NormSquared>
+      <math display="inline" aria-label="Global MSE loss" style={equationStyle}>
+        <mrow>
+          <LossName subscript="global" /><mo>=</mo>
+          <NormSquared>
+            <mfrac><mn>1</mn><mi>N</mi></mfrac><Sum /><IndexedVariable value="s" />
+            <mo>&#x2212;</mo>
+            <mfrac><mn>1</mn><mi>N</mi></mfrac><Sum /><IndexedVariable value="t" />
+          </NormSquared>
+        </mrow>
       </math>
     );
   }
 
   if (objective === 'explanation') {
     return (
-      <math display="block" aria-label="Explanation-weighted loss" style={{ fontSize: 48, color: 'var(--osd-text)' }}>
-        <LossName subscript="expl" /><mo>=</mo><Sum />
-        <msub><mi>A</mi><mi>i</mi></msub>
-        <NormSquared><IndexedVariable value="s" /><mo>&#x2212;</mo><IndexedVariable value="t" /></NormSquared>
+      <math display="inline" aria-label="Explanation-weighted loss" style={equationStyle}>
+        <mrow>
+          <LossName subscript="expl" /><mo>=</mo><Sum />
+          <msub><mi>A</mi><mi>i</mi></msub>
+          <NormSquared><IndexedVariable value="s" /><mo>&#x2212;</mo><IndexedVariable value="t" /></NormSquared>
+        </mrow>
       </math>
     );
   }
 
   return (
-    <math display="block" aria-label="Combined loss" style={{ fontSize: 51, color: 'var(--osd-text)' }}>
-      <LossName /><mo>=</mo>
-      <msub><mi>&#x3BB;</mi><mi>g</mi></msub><LossName subscript="global" />
-      <mo>+</mo>
-      <msub><mi>&#x3BB;</mi><mi>e</mi></msub><LossName subscript="expl" />
+    <math display="inline" aria-label="Combined loss" style={equationStyle}>
+      <mrow>
+        <LossName /><mo>=</mo>
+        <msub><mi>&#x3BB;</mi><mi>g</mi></msub><LossName subscript="global" />
+        <mo>+</mo>
+        <msub><mi>&#x3BB;</mi><mi>e</mi></msub><LossName subscript="expl" />
+      </mrow>
     </math>
   );
 };
@@ -389,10 +404,10 @@ const ObjectiveRow = ({
   accent: string;
   delay: number;
 }) => (
-  <div style={{ display: 'grid', gridTemplateColumns: '340px 1fr', alignItems: 'center', minHeight: 150, background: `linear-gradient(90deg, ${accent}0D, ${accent}03)`, borderRadius: 'var(--osd-radius)', padding: '24px 36px 24px 32px', borderLeft: `4px solid ${accent}`, ...riseIn(delay) }}>
+  <div style={{ display: 'grid', gridTemplateColumns: '420px 1fr', alignItems: 'center', minHeight: 150, background: `linear-gradient(90deg, ${accent}0D, ${accent}03)`, borderRadius: 'var(--osd-radius)', padding: '24px 36px 24px 32px', borderLeft: `4px solid ${accent}`, ...riseIn(delay) }}>
     <div>
       <div style={{ fontSize: 20, color: muted, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 9 }}>{subtitle}</div>
-      <h3 style={{ fontFamily: 'var(--osd-font-display)', fontSize: 37, fontWeight: 800, margin: 0, lineHeight: 1.18 }}>{title}</h3>
+      <h3 style={{ fontFamily: 'var(--osd-font-display)', fontSize: 26, fontWeight: 800, margin: 0, lineHeight: 1.18, whiteSpace: 'nowrap' }}>{title}</h3>
     </div>
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minWidth: 0, background: 'transparent' }}>
       <Equation objective={objective} />
@@ -799,7 +814,7 @@ Cover.transition = {
 
 // === Meta ===
 export const meta: SlideMeta = {
-  title: 'Explanation-Guided Knowledge Distillation',
+  title: 'Look Where It Matters: Distilling Vision Through Explanations',
   createdAt: '2026-05-25T15:32:37.747Z',
 };
 

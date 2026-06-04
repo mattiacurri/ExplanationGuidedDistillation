@@ -5,6 +5,12 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[{Qwen Team}(2025)]{qwen2025vl}
+{Qwen Team}.
+\newblock {Qwen2.5-VL Technical Report}.
+\newblock \emph{arXiv preprint arXiv:2502.13923}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2502.13923}.
+
 \bibitem[Dosovitskiy et~al.(2021)Dosovitskiy, Beyer, Kolesnikov, Weissenborn,
   Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, and
   Houlsby]{dosovitskiy2021image}
@@ -15,10 +21,23 @@ Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn,
   scale.
 \newblock In \emph{International Conference on Learning Representations}, 2021.
 
-\bibitem[Hinton et~al.(2015)Hinton, Vinyals, and Dean]{hinton2015distilling}
-Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
-\newblock Distilling the knowledge in a neural network.
-\newblock \emph{arXiv preprint arXiv:1503.02531}, 2015.
+\bibitem[Selvaraju et~al.(2017)Selvaraju, Cogswell, Das, Vedantam, Parikh, and
+  Batra]{selvaraju2017gradcam}
+Ramprasaath~R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam,
+  Devi Parikh, and Dhruv Batra.
+\newblock Grad-cam: Visual explanations from deep networks via gradient-based
+  localization.
+\newblock In \emph{Proceedings of the IEEE International Conference on Computer
+  Vision}, pages 618--626, 2017.
+
+\bibitem[Radford et~al.(2021)Radford, Kim, Hallacy, Ramesh, Goh, Agarwal,
+  Sastry, Askell, Mishkin, Clark, Krueger, and Sutskever]{radford2021clip}
+Alec Radford, Jong~Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
+  Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark,
+  Gretchen Krueger, and Ilya Sutskever.
+\newblock Learning transferable visual models from natural language
+  supervision.
+\newblock In \emph{International Conference on Machine Learning}, 2021.
 
 \bibitem[Li et~al.(2023)Li, Li, Savarese, and Hoi]{li2023blip2}
 Junnan Li, Dongxu Li, Silvio Savarese, and Steven Hoi.
@@ -31,23 +50,10 @@ Haotian Liu, Chunyuan Li, Qingyang Wu, and Yong~Jae Lee.
 \newblock Visual instruction tuning.
 \newblock In \emph{Advances in Neural Information Processing Systems}, 2023.
 
-\bibitem[{Qwen Team}(2025)]{qwen2025vl}
-{Qwen Team}.
-\newblock {Qwen2.5-VL Technical Report}.
-\newblock \emph{arXiv preprint arXiv:2502.13923}, 2025.
-
-\bibitem[{Qwen Team}(2026)]{qwen2026qwen35}
-{Qwen Team}.
-\newblock {Qwen3.5}: Towards native multimodal agents, 2026.
-
-\bibitem[Radford et~al.(2021)Radford, Kim, Hallacy, Ramesh, Goh, Agarwal,
-  Sastry, Askell, Mishkin, Clark, Krueger, and Sutskever]{radford2021clip}
-Alec Radford, Jong~Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
-  Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark,
-  Gretchen Krueger, and Ilya Sutskever.
-\newblock Learning transferable visual models from natural language
-  supervision.
-\newblock In \emph{International Conference on Machine Learning}, 2021.
+\bibitem[Hinton et~al.(2015)Hinton, Vinyals, and Dean]{hinton2015distilling}
+Geoffrey Hinton, Oriol Vinyals, and Jeff Dean.
+\newblock Distilling the knowledge in a neural network.
+\newblock \emph{arXiv preprint arXiv:1503.02531}, 2015.
 
 \bibitem[Romero et~al.(2015)Romero, Ballas, Kahou, Chassang, Gatta, and
   Bengio]{romero2015fitnets}
@@ -56,31 +62,29 @@ Adriana Romero, Nicolas Ballas, Samira~Ebrahimi Kahou, Antoine Chassang, Carlo
 \newblock {FitNets}: Hints for thin deep nets.
 \newblock In \emph{International Conference on Learning Representations}, 2015.
 
-\bibitem[Selvaraju et~al.(2017)Selvaraju, Cogswell, Das, Vedantam, Parikh, and
-  Batra]{selvaraju2017gradcam}
-Ramprasaath~R. Selvaraju, Michael Cogswell, Abhishek Das, Ramakrishna Vedantam,
-  Devi Parikh, and Dhruv Batra.
-\newblock Grad-cam: Visual explanations from deep networks via gradient-based
-  localization.
-\newblock In \emph{Proceedings of the IEEE International Conference on Computer
-  Vision}, pages 618--626, 2017.
+\bibitem[Zagoruyko and Komodakis(2017)]{zagoruyko2017attention}
+Sergey Zagoruyko and Nikos Komodakis.
+\newblock Paying more attention to attention: Improving the performance of
+  convolutional neural networks via attention transfer.
+\newblock In \emph{International Conference on Learning Representations}, 2017.
+
+\bibitem[{Qwen Team}(2026)]{qwen2026qwen35}
+{Qwen Team}.
+\newblock {Qwen3.5}: Towards native multimodal agents, February 2026.
+\newblock URL \url{https://qwen.ai/blog?id=qwen3.5}.
 
 \bibitem[Team(2025{\natexlab{a}})]{vteam2025glm45v}
 GLM Team.
 \newblock {GLM-4.5V and GLM-4.1V-Thinking}: Towards versatile multimodal
   reasoning with scalable reinforcement learning.
 \newblock \emph{arXiv preprint arXiv:2507.01006}, 2025{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2507.01006}.
 
 \bibitem[Team(2025{\natexlab{b}})]{yu2025minicpmv45}
 MiniCPM Team.
 \newblock {MiniCPM-V 4.5}: Cooking efficient {MLLMs} via architecture, data,
   and training recipe.
 \newblock \emph{arXiv preprint arXiv:2509.18154}, 2025{\natexlab{b}}.
-
-\bibitem[Zagoruyko and Komodakis(2017)]{zagoruyko2017attention}
-Sergey Zagoruyko and Nikos Komodakis.
-\newblock Paying more attention to attention: Improving the performance of
-  convolutional neural networks via attention transfer.
-\newblock In \emph{International Conference on Learning Representations}, 2017.
+\newblock URL \url{https://arxiv.org/abs/2509.18154}.
 
 \end{thebibliography}
