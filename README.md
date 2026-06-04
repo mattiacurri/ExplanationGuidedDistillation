@@ -1,4 +1,4 @@
-# Explanation-Guided Knowledge Distillation
+# Look Where It Matters: Distilling Vision Through Explanations
 
 This project investigates whether visual explanations can provide a useful supervision signal for knowledge distillation in a vision-language model. A ViT-based visual student is trained to replace the visual module of `Qwen/Qwen2.5-VL-3B-Instruct`; the language model remains unchanged, and final evaluation is performed on generated responses after replacement.
 

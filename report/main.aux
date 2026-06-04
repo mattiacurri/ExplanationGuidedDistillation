@@ -11,15 +11,15 @@
 \citation{qwen2025vl}
 \citation{radford2021clip}
 \citation{li2023blip2,liu2023llava}
-\citation{hinton2015distilling}
-\citation{romero2015fitnets,zagoruyko2017attention}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Pipeline overview.}}{2}{figure.1}\protected@file@percent }
 \newlabel{fig:pipeline}{{1}{2}{Pipeline overview}{figure.1}{}}
-\newlabel{fig:pipeline@cref}{{[figure][1][]1}{[1][1][]2}{}{}{}}
+\newlabel{fig:pipeline@cref}{{[figure][1][]1}{[1][2][]2}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}\protected@file@percent }
 \newlabel{sec:related}{{2}{2}{Related Work}{section.2}{}}
 \newlabel{sec:related@cref}{{[section][2][]2}{[1][2][]2}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{Vision-language models.}{2}{section*.1}\protected@file@percent }
+\citation{hinton2015distilling}
+\citation{romero2015fitnets,zagoruyko2017attention}
 \citation{selvaraju2017gradcam}
 \citation{zagoruyko2017attention}
 \@writefile{toc}{\contentsline {paragraph}{Knowledge distillation.}{3}{section*.2}\protected@file@percent }
@@ -48,17 +48,15 @@
 \newlabel{sec:results}{{4}{5}{Results}{section.4}{}}
 \newlabel{sec:results@cref}{{[section][4][]4}{[1][5][]5}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{Teacher Probe Results.}{5}{section*.9}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Teacher-probe results on frozen VLM visual features.}}{5}{table.1}\protected@file@percent }
-\newlabel{tab:probe-results}{{1}{5}{Teacher-probe results on frozen VLM visual features}{table.1}{}}
-\newlabel{tab:probe-results@cref}{{[table][1][]1}{[1][5][]5}{}{}{}}
 \bibstyle{unsrtnat}
 \bibdata{references}
 \bibcite{qwen2025vl}{{1}{2025}{{Qwen Team}}{{}}}
-\bibcite{dosovitskiy2021image}{{2}{2021}{{Dosovitskiy et~al.}}{{Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, and Houlsby}}}
-\bibcite{selvaraju2017gradcam}{{3}{2017}{{Selvaraju et~al.}}{{Selvaraju, Cogswell, Das, Vedantam, Parikh, and Batra}}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces LLM jury results}}{6}{table.2}\protected@file@percent }
 \newlabel{tab:primary-results}{{2}{6}{LLM jury results}{table.2}{}}
 \newlabel{tab:primary-results@cref}{{[table][2][]2}{[1][6][]6}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Teacher-probe results on frozen VLM visual features.}}{6}{table.1}\protected@file@percent }
+\newlabel{tab:probe-results}{{1}{6}{Teacher-probe results on frozen VLM visual features}{table.1}{}}
+\newlabel{tab:probe-results@cref}{{[table][1][]1}{[1][5][]6}{}{}{}}
 \@writefile{toc}{\contentsline {paragraph}{Generated-Answer Results.}{6}{section*.10}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Qualitative Analysis}{6}{subsection.4.1}\protected@file@percent }
 \newlabel{sec:qualitative}{{4.1}{6}{Qualitative Analysis}{subsection.4.1}{}}
@@ -69,16 +67,18 @@
 \@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{6}{section.6}\protected@file@percent }
 \newlabel{sec:conclusion}{{6}{6}{Conclusion}{section.6}{}}
 \newlabel{sec:conclusion@cref}{{[section][6][]6}{[1][6][]6}{}{}{}}
+\bibcite{dosovitskiy2021image}{{2}{2021}{{Dosovitskiy et~al.}}{{Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, and Houlsby}}}
+\bibcite{selvaraju2017gradcam}{{3}{2017}{{Selvaraju et~al.}}{{Selvaraju, Cogswell, Das, Vedantam, Parikh, and Batra}}}
 \bibcite{radford2021clip}{{4}{2021}{{Radford et~al.}}{{Radford, Kim, Hallacy, Ramesh, Goh, Agarwal, Sastry, Askell, Mishkin, Clark, Krueger, and Sutskever}}}
 \bibcite{li2023blip2}{{5}{2023}{{Li et~al.}}{{Li, Li, Savarese, and Hoi}}}
 \bibcite{liu2023llava}{{6}{2023}{{Liu et~al.}}{{Liu, Li, Wu, and Lee}}}
 \bibcite{hinton2015distilling}{{7}{2015}{{Hinton et~al.}}{{Hinton, Vinyals, and Dean}}}
 \bibcite{romero2015fitnets}{{8}{2015}{{Romero et~al.}}{{Romero, Ballas, Kahou, Chassang, Gatta, and Bengio}}}
 \bibcite{zagoruyko2017attention}{{9}{2017}{{Zagoruyko and Komodakis}}{{}}}
-\bibcite{qwen2026qwen35}{{10}{2026}{{Qwen Team}}{{}}}
-\bibcite{vteam2025glm45v}{{11}{2025{a}}{{Team}}{{}}}
-\bibcite{yu2025minicpmv45}{{12}{2025{b}}{{Team}}{{}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Representative qualitative patterns in generated answers. The upper cases illustrate visual evidence preserved by explanation-guided distillation; the lower cases expose remaining limitations or baseline failure modes.}}{7}{figure.3}\protected@file@percent }
 \newlabel{fig:qualitative-patterns}{{3}{7}{Representative qualitative patterns in generated answers. The upper cases illustrate visual evidence preserved by explanation-guided distillation; the lower cases expose remaining limitations or baseline failure modes}{figure.3}{}}
 \newlabel{fig:qualitative-patterns@cref}{{[figure][3][]3}{[1][6][]7}{}{}{}}
+\bibcite{qwen2026qwen35}{{10}{2026}{{Qwen Team}}{{}}}
+\bibcite{vteam2025glm45v}{{11}{2025{a}}{{Team}}{{}}}
+\bibcite{yu2025minicpmv45}{{12}{2025{b}}{{Team}}{{}}}
 \gdef \@abspage@last{8}

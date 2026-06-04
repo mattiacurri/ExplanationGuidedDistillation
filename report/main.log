@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2026.6.1)  4 JUN 2026 17:38
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2026.6.1)  4 JUN 2026 20:10
  system commands enabled.
  file:line:error style messages enabled.
 **c:/Users/acurr/Desktop/Progetti/ComputerVision/report/main
@@ -652,28 +652,30 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<images/pipeline.png, id=53, 2814.515pt x 1509.64pt>
+ [1
+
+
+{C:/Users/acurr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+<images/pipeline.png, id=67, 2814.515pt x 1509.64pt>
 File: images/pipeline.png Graphic file (type png)
 <use images/pipeline.png>
 Package luatex.def Info: images/pipeline.png  used on input line 73.
 (luatex.def)             Requested size: 469.75499pt x 251.95926pt.
- [1
 
+Underfull \vbox (badness 2970) has occurred while \output is active []
 
-{C:/Users/acurr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2
+ [2
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.1'
 <./images/pipeline.png>]
-<images/probes.png, id=102, 1678.27pt x 944.52875pt>
+<images/probes.png, id=103, 1678.27pt x 944.52875pt>
 File: images/probes.png Graphic file (type png)
 <use images/probes.png>
 Package luatex.def Info: images/probes.png  used on input line 165.
 (luatex.def)             Requested size: 469.75499pt x 264.37978pt.
  [3] [4
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.2'
-<./images/probes.png>] [5
-warning  (pdf backend): ignoring duplicate destination with the name 'table.1'
-]
-<images/qualitative_patterns_combined.pdf, id=158, 779.0706pt x 537.65266pt>
+<./images/probes.png>] [5]
+<images/qualitative_patterns_combined.pdf, id=161, 779.0706pt x 537.65266pt>
 File: images/qualitative_patterns_combined.pdf Graphic file (type pdf)
 <use images/qualitative_patterns_combined.pdf>
 Package luatex.def Info: images/qualitative_patterns_combined.pdf  used on inpu
@@ -681,6 +683,8 @@ t line 306.
 (luatex.def)             Requested size: 469.75499pt x 324.18564pt.
  (./main.bbl [6
 warning  (pdf backend): ignoring duplicate destination with the name 'table.2'
+
+warning  (pdf backend): ignoring duplicate destination with the name 'table.1'
 ] [7
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.3'
 <./images/qualitative_patterns_combined.pdf>]) [8] (./main.aux)
@@ -699,10 +703,10 @@ Here is how much of LuaTeX's memory you used:
    8 hlist, 2 vlist, 2 rule, 1 local_par, 4 glue, 155 kern, 1 penalty, 1 margin_
 kern, 4 glyph, 97 attribute, 65 glue_spec, 97 attribute_list, 1 write, 4 pdf_act
 ion nodes
-   avail lists: 2:581,3:251,4:86,5:343,6:45,7:12695,8:42,9:535,10:33,11:1051
+   avail lists: 2:649,3:260,4:85,5:318,6:45,7:12683,8:60,9:541,10:33,11:1031
  37661 multiletter control sequences out of 65536+600000
  73 fonts using 4840119 bytes
- 72i,12n,75p,1209b,510s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,12n,75p,1209b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/acurr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}{C:/Us
 ers/acurr/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users/a
 curr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
@@ -718,9 +722,9 @@ KTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/acurr/AppData/Loca
 l/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/acurr/AppData/Local
 /Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/acurr/AppData/Local/
 Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (8 pages, 4984369 bytes).
+Output written on main.pdf (8 pages, 4985607 bytes).
 
-PDF statistics: 329 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 332 PDF objects out of 1000 (max. 8388607)
  55 named destinations out of 1000 (max. 131072)
  89 words of extra memory for PDF output out of 10000 (max. 100000000)
 
