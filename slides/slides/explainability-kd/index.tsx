@@ -9,6 +9,8 @@ import qualMixingBowlImg from './assets/qual_case_mixing_bowl.png';
 import qualTriceratopsSceneImg from './assets/qual_case_triceratops_scene.png';
 import qualTriceratopsSkeletonImg from './assets/qual_case_triceratops_skeleton.png';
 import qualitativeCaseText from './assets/qualitative_case_text.json';
+import catImg from './assets/cat.png';
+import thmImg from './assets/thm.png';
 
 // === Design system ===
 export const design: DesignSystem = {
@@ -58,8 +60,12 @@ const fadeIn = (delay: number): React.CSSProperties =>
 const Footer = () => {
   const { current, total } = useSlidePageNumber();
   return (
-    <div style={{ position: 'absolute', bottom: 40, right: 120, fontSize: 22, color: muted }}>
-      {String(current).padStart(2, '0')} / {String(total).padStart(2, '0')}
+    <div>
+      <img src={catImg} style={{ position: 'absolute', bottom: 24, right: 32, width: 48, height: 48, objectFit: 'contain', opacity: 0.7 }} alt="cat" />
+      <img src={thmImg} style={{ position: 'absolute', bottom: 24, left: 32, width: 48, height: 48, objectFit: 'contain', opacity: 0.7 }} alt="thm" />
+      <div style={{ position: 'absolute', bottom: 40, right: 120, fontSize: 22, color: muted }}>
+        {String(current).padStart(2, '0')} / {String(total).padStart(2, '0')}
+      </div>
     </div>
   );
 };
@@ -693,7 +699,7 @@ const QualitativePatternSlide = ({
           &ldquo;{comparison.guided.excerpt}&rdquo;
         </p>
         <div style={{ borderTop: `2px solid ${positive ? amber : muted}55`, paddingTop: 18 }}>
-          <div style={{ fontSize: 19, fontWeight: 700, color: positive ? 'var(--osd-accent)' : muted, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+          <div style={{ fontSize: 19, fontWeight: 700, color: 'var(--osd-accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
             Reading
           </div>
           <p style={{ margin: '8px 0 0', fontSize: 27, lineHeight: 1.42, color: muted }}>
@@ -790,7 +796,7 @@ const Thanks: Page = () => (
     <FlameBar />
     <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 800, height: 400, borderRadius: '50%', background: `radial-gradient(ellipse, ${amber}12, transparent 70%)`, animation: 'pulseGlow 4s ease-in-out infinite', pointerEvents: 'none' }} />
     <div style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-      <div style={{ fontSize: 100, marginBottom: 30, ...riseIn(0.1) }}>🚀</div>
+      <img src={catImg} style={{ width: 160, height: 160, objectFit: 'contain', display: 'block', margin: '0 auto 30px', ...riseIn(0.1) }} alt="cat" />
       <h2 style={{ fontFamily: 'var(--osd-font-display)', fontSize: 'var(--osd-size-hero)', fontWeight: 900, margin: 0, lineHeight: 1.08, ...riseIn(0.25) }}>Thank you</h2>
       <p style={{ fontSize: 40, color: muted, marginTop: 40, lineHeight: 1.5, ...riseIn(0.55) }}>Questions?</p>
       <div style={{ marginTop: 72, display: 'inline-block', height: 3, width: 200, background: `linear-gradient(90deg, ${amber}, ${crimson})`, ...fadeIn(0.8) }} />
