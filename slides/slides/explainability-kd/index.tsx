@@ -9,6 +9,7 @@ import qualMixingBowlImg from './assets/qual_case_mixing_bowl.png';
 import qualTriceratopsSceneImg from './assets/qual_case_triceratops_scene.png';
 import qualTriceratopsSkeletonImg from './assets/qual_case_triceratops_skeleton.png';
 import qualitativeCaseText from './assets/qualitative_case_text.json';
+import firstImg from './assets/first.png';
 import catImg from './assets/cat.png';
 import thmImg from './assets/thm.png';
 
@@ -61,8 +62,8 @@ const Footer = () => {
   const { current, total } = useSlidePageNumber();
   return (
     <div>
-      <img src={catImg} style={{ position: 'absolute', bottom: 24, right: 32, width: 48, height: 48, objectFit: 'contain', opacity: 0.7 }} alt="cat" />
-      <img src={thmImg} style={{ position: 'absolute', bottom: 24, left: 32, width: 48, height: 48, objectFit: 'contain', opacity: 0.7 }} alt="thm" />
+      <img src={catImg} style={{ position: 'absolute', bottom: 24, right: 32, width: 48, height: 48, objectFit: 'contain', opacity: 1.0 }} alt="cat" />
+      <img src={thmImg} style={{ position: 'absolute', bottom: 24, left: 32, width: 48, height: 48, objectFit: 'contain', opacity: 1.0 }} alt="thm" />
       <div style={{ position: 'absolute', bottom: 40, right: 120, fontSize: 22, color: muted }}>
         {String(current).padStart(2, '0')} / {String(total).padStart(2, '0')}
       </div>
@@ -90,9 +91,17 @@ const FlameBar = () => (
 );
 
 // === Shared eyebrow ===
+const eyebrowEmoji: Record<string, string> = {
+  Introduction: '💡',
+  Methodology: '🧪',
+  Results: '📊',
+  'Qualitative analysis': '🔍',
+  Conclusion: '🎯',
+};
+
 const Eyebrow = ({ children, delay = 0.1 }: { children: string; delay?: number }) => (
   <div style={{ fontSize: 24, color: 'var(--osd-accent)', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: 28, ...riseIn(delay) }}>
-    {children}
+    <span style={{ letterSpacing: 0, marginRight: 12 }}>{eyebrowEmoji[children] ?? '•'}</span>{children}
   </div>
 );
 
@@ -118,21 +127,8 @@ const EASE_IN = 'cubic-bezier(0.4, 0, 1, 1)';
 // PAGE 1 — Cover
 // ================================================================
 const Cover: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 160px', position: 'relative', overflow: 'hidden' }}>
-    <FlameBar />
-    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 900, height: 500, borderRadius: '50%', background: `radial-gradient(ellipse, ${amber}15, transparent 70%)`, animation: 'pulseGlow 4s ease-in-out infinite', pointerEvents: 'none' }} />
-    <div style={{ textAlign: 'center', maxWidth: 1300, position: 'relative', zIndex: 1 }}>
-      <h1 style={{ fontFamily: 'var(--osd-font-display)', fontSize: 'var(--osd-size-hero)', fontWeight: 900, margin: 0, lineHeight: 1.12, ...riseIn(0.25) }}>
-        Look Where It Matters:<br />Distilling Vision Through Explanations
-      </h1>
-      <p style={{ fontSize: 34, color: muted, marginTop: 44, lineHeight: 1.5, ...riseIn(0.5) }}>
-        Can explainability provide a useful training signal<br />for distilling vision-language models?
-      </p>
-      <div style={{ marginTop: 56, ...riseIn(0.75) }}>
-        <span style={{ fontSize: 28, color: 'var(--osd-accent)', fontWeight: 600 }}>Mattia Curri</span>
-      </div>
-    </div>
-    <Footer />
+  <div style={{ ...fill, background: 'var(--osd-bg)', position: 'relative', overflow: 'hidden' }}>
+    <img src={firstImg} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} alt="Cover slide" />
   </div>
 );
 
@@ -142,10 +138,10 @@ const Cover: Page = () => (
 const Motivation: Page = () => (
   <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
     <FlameBar />
-    <Eyebrow>Motivation</Eyebrow>
+    <Eyebrow>Introduction</Eyebrow>
     <PageHeading>Can explanations become a<br />training signal?</PageHeading>
     <p style={{ fontSize: 38, color: muted, lineHeight: 1.5, maxWidth: 1300, marginTop: 48, marginBottom: 0, ...riseIn(0.3) }}>
-      Knowledge distillation usually treats the teacher signal as a target to be matched <strong style={{ color: 'var(--osd-text)' }}>uniformly</strong>{''}
+      Knowledge distillation usually treats the teacher signal as a target to be matched <strong style={{ color: 'var(--osd-accent)' }}>uniformly</strong>{''}
     </p>
     <ul style={{ marginTop: 52, marginBottom: 0, padding: 0, maxWidth: 1300 }}>
       <Bullet delay={0.45}>What if we <strong style={{ color: 'var(--osd-accent)' }}>weight</strong> the teacher signal by estimated importance?</Bullet>
@@ -161,9 +157,9 @@ const Motivation: Page = () => (
 const Approach: Page = () => (
   <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
     <FlameBar />
-    <Eyebrow>The Approach</Eyebrow>
-    <PageHeading>From uniform matching to<br />saliency-weighted distillation</PageHeading>
-    <div style={{ display: 'flex', gap: 48, marginTop: 60, maxWidth: 1480, alignItems: 'stretch' }}>
+    <Eyebrow>Introduction</Eyebrow>
+    <PageHeading>Saliency-weighted distillation</PageHeading>
+    <div style={{ display: 'flex', gap: 48, marginTop: 100, maxWidth: 1480, alignItems: 'stretch' }}>
       {/* Standard KD */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', ...riseIn(0.35) }}>
         <div style={{ fontSize: 26, color: muted, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 24 }}>Standard KD</div>
@@ -195,7 +191,7 @@ const Approach: Page = () => (
 const Pipeline: Page = () => (
   <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '80px 120px 60px', position: 'relative', display: 'flex', flexDirection: 'column' }}>
     <FlameBar />
-    <Eyebrow>Method</Eyebrow>
+    <Eyebrow>Methodology</Eyebrow>
     <PageHeading>Pipeline overview</PageHeading>
     <div style={{ marginTop: 32, ...fadeIn(0.35), flex: 1, display: 'flex', alignItems: 'center' }}>
       <img src={pipelineImg} style={{ width: '100%', maxHeight: 720, objectFit: 'contain', borderRadius: 8 }} alt="Pipeline overview" />
@@ -208,9 +204,9 @@ const Pipeline: Page = () => (
 // PAGE 5 — Teacher probes (image only)
 // ================================================================
 const TeacherProbes: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '80px 80px 60px', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '80px 120px 60px', position: 'relative', display: 'flex', flexDirection: 'column' }}>
     <FlameBar />
-    <Eyebrow>Method</Eyebrow>
+    <Eyebrow>Methodology</Eyebrow>
     <PageHeading>Teacher probe architectures</PageHeading>
     <div style={{ marginTop: 10, ...fadeIn(0.35), flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img src={probesImg} style={{ width: '100%', maxHeight: 760, objectFit: 'contain', borderRadius: 8 }} alt="Probe architectures" />
@@ -315,7 +311,7 @@ const SignalStage = ({
 const GradCAM: Page = () => (
   <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
     <FlameBar />
-    <Eyebrow>Method</Eyebrow>
+    <Eyebrow>Methodology</Eyebrow>
     <PageHeading>From explanation to token weights</PageHeading>
     <div style={{ display: 'flex', gap: 22, alignItems: 'stretch', marginTop: 52, maxWidth: 1510 }}>
       <SignalStage index="01 / frozen" title="Visual tokens" detail="Qwen map: 28 x 28" mode="tokens" delay={0.30} />
@@ -424,7 +420,7 @@ const ObjectiveRow = ({
 const Objectives: Page = () => (
   <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
     <FlameBar />
-    <Eyebrow>Method</Eyebrow>
+    <Eyebrow>Methodology</Eyebrow>
     <PageHeading>Three distillation objectives</PageHeading>
     <div style={{ display: 'flex', flexDirection: 'column', gap: 18, marginTop: 42, maxWidth: 1500 }}>
       <ObjectiveRow title="Global MSE" subtitle="Baseline" objective="global" accent={muted} delay={0.3} />
@@ -444,16 +440,16 @@ const ProbeResults: Page = () => (
     <Eyebrow>Results</Eyebrow>
     <PageHeading>Teacher probe accuracy</PageHeading>
     {/* Table */}
-    <div style={{ margin: '64px auto 0', width: 1200, maxWidth: '100%', ...riseIn(0.35) }}>
+    <div style={{ margin: '94px auto 0', width: 1200, maxWidth: '100%', ...riseIn(0.35) }}>
       <div style={{ display: 'flex', borderBottom: `2px solid ${muted}40`, paddingBottom: 20, marginBottom: 20 }}>
-        <div style={{ flex: 1.4, fontSize: 26, color: muted, fontWeight: 600 }}>Probe type</div>
-        <div style={{ flex: 0.8, fontSize: 26, color: muted, fontWeight: 600, textAlign: 'center' }}>Best epoch</div>
-        <div style={{ flex: 1, fontSize: 26, color: muted, fontWeight: 600, textAlign: 'center' }}>Val accuracy</div>
-        <div style={{ flex: 1, fontSize: 26, color: muted, fontWeight: 600, textAlign: 'center' }}>Test accuracy</div>
+        <div style={{ flex: 1.4, fontSize: 30, color: muted, fontWeight: 600 }}>Probe type</div>
+        <div style={{ flex: 0.8, fontSize: 30, color: muted, fontWeight: 600, textAlign: 'center' }}>Best epoch</div>
+        <div style={{ flex: 1, fontSize: 30, color: muted, fontWeight: 600, textAlign: 'center' }}>Val accuracy</div>
+        <div style={{ flex: 1, fontSize: 30, color: muted, fontWeight: 600, textAlign: 'center' }}>Test accuracy</div>
       </div>
       <Row label="Mean" epoch="10" val="95.07" test="95.00" bestVal bestTest delay={0.45} />
       <Row label="Attention" epoch="2" val="94.93" test="94.48" delay={0.55} />
-      <Row label="Cross-attn" epoch="10" val="94.58" test="94.78" delay={0.65} />
+      <Row label="Cross-attention" epoch="10" val="94.58" test="94.78" delay={0.65} />
     </div>
     <Footer />
   </div>
@@ -493,12 +489,12 @@ const PrimaryResults: Page = () => (
         <div style={{ flex: 0.6, fontSize: 23, color: muted, fontWeight: 600, textAlign: 'center' }}>κ</div>
       </div>
       <ResRow label="Base MSE" student="10" teacher="427" agree="0.936" k="0.312" bestAgree delay={0.42} />
-      <ResRow label="Mean, expl-only" student="69" teacher="367" agree="0.705" k="0.355" bestStudent bestTeacher delay={0.5} />
-      <ResRow label="Attn, expl-only" student="56" teacher="381" agree="0.741" k="0.367" delay={0.58} />
-      <ResRow label="Cross, expl-only" student="20" teacher="416" agree="0.856" k="0.337" delay={0.66} />
-      <ResRow label="Mean, MSE+expl" student="58" teacher="379" agree="0.737" k="0.355" delay={0.74} />
-      <ResRow label="Attn, MSE+expl" student="61" teacher="376" agree="0.737" k="0.338" delay={0.82} />
-      <ResRow label="Cross, MSE+expl" student="37" teacher="400" agree="0.817" k="0.372" bestK delay={0.9} />
+      <ResRow label="Mean prober, explanation-only loss " student="69" teacher="367" agree="0.705" k="0.355" bestStudent bestTeacher delay={0.5} />
+      <ResRow label="Attention prober, explanation-only loss " student="56" teacher="381" agree="0.741" k="0.367" delay={0.58} />
+      <ResRow label="Cross-Attention prober, explanation-only loss " student="20" teacher="416" agree="0.856" k="0.337" delay={0.66} />
+      <ResRow label="Mean prober, MSE+explanation loss " student="58" teacher="379" agree="0.737" k="0.355" delay={0.74} />
+      <ResRow label="Attention prober, MSE+explanation loss " student="61" teacher="376" agree="0.737" k="0.338" delay={0.82} />
+      <ResRow label="Cross-Attention prober, MSE+explanation loss " student="37" teacher="400" agree="0.817" k="0.372" bestK delay={0.9} />
     </div>
     <Footer />
   </div>
@@ -755,35 +751,46 @@ const RobustnessSlide: Page = () => (
 // ================================================================
 // PAGE 13 — Limitations
 // ================================================================
-const Limitations: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
-    <FlameBar />
-    <Eyebrow>Scope</Eyebrow>
-    <PageHeading>Limitations</PageHeading>
-    <ul style={{ marginTop: 52, marginBottom: 0, padding: 0, maxWidth: 1300 }}>
-      <Bullet delay={0.3}><strong style={{ color: 'var(--osd-accent)' }}>Single VLM, single dataset:</strong>{' one teacher, Mini-ImageNet only.'}</Bullet>
-      <Bullet delay={0.43}><strong style={{ color: 'var(--osd-accent)' }}>VLM judges, not humans:</strong>{' model-specific biases may exist.'}</Bullet>
-      <Bullet delay={0.56}><strong style={{ color: 'var(--osd-accent)' }}>Saliency is probe-mediated:</strong>{' the probe\'s class-discriminative focus may not entirely align with the backbone.'}</Bullet>
-      <Bullet delay={0.69}><strong style={{ color: 'var(--osd-accent)' }}>Teacher still dominates:</strong> the method improves fidelity but does not yet solve faithful visual-module replacement.</Bullet>
-    </ul>
-    <Footer />
-  </div>
+const CompactBullet = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
+  <li style={{ fontSize: 29, lineHeight: 1.42, marginBottom: 24, listStyle: 'none', position: 'relative', ...riseIn(delay) }}>
+    <span style={{ position: 'absolute', left: -28, top: 13, width: 9, height: 9, borderRadius: '50%', background: 'var(--osd-accent)' }} />
+    {children}
+  </li>
 );
 
 // ================================================================
 // PAGE 14 — Conclusion
 // ================================================================
-const Conclusion: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
+const LimitationsAndConclusion: Page = () => (
+  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: '96px 120px', position: 'relative' }}>
     <FlameBar />
     <Eyebrow>Conclusion</Eyebrow>
-    <PageHeading>Explanations can be a useful<br />distillation signal</PageHeading>
-    <ul style={{ marginTop: 52, marginBottom: 0, padding: 0, maxWidth: 1300 }}>
-      <Bullet delay={0.3}>Grad-CAM-weighted token consistently outperforms plain global MSE<strong style={{ color: 'var(--osd-accent)' }}>{''}</strong>.</Bullet>
-      <Bullet delay={0.45}>The strongest result comes from <strong style={{ color: 'var(--osd-accent)' }}>explanation-only supervision</strong>.</Bullet>
-      <Bullet delay={0.6}>Gains manifest as <strong style={{ color: 'var(--osd-accent)' }}>preserved local evidence</strong> and reduced generation robustness failures.</Bullet>
-      <Bullet delay={0.75}>Future work: richer prompts, human evaluation, stronger adapters, and <strong style={{ color: 'var(--osd-accent)' }}>saliency aligned with multimodal representations</strong>.</Bullet>
-    </ul>
+    <PageHeading>Explanations help, but the gap remains</PageHeading>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: 64, rowGap: 28, marginTop: 54, maxWidth: 1540 }}>
+      <section style={{ minHeight: 330, padding: '42px 46px 34px 56px', background: 'rgba(140,123,108,0.06)', borderTop: `4px solid ${muted}`, borderRadius: 'var(--osd-radius)', ...riseIn(0.3) }}>
+        <div style={{ height: 32, fontSize: 23, color: muted, letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, marginBottom: 28 }}>
+          Limitations
+        </div>
+        <ul style={{ margin: 0, padding: 0 }}>
+          <CompactBullet delay={0.4}><strong style={{ color: 'var(--osd-accent)' }}>Single VLM, single dataset:</strong>{' one Qwen teacher, Mini-ImageNet only.'}</CompactBullet>
+          <CompactBullet delay={0.5}><strong style={{ color: 'var(--osd-accent)' }}>VLM judges:</strong>{' useful at scale, but not a substitute for human evaluation.'}</CompactBullet>
+          <CompactBullet delay={0.6}><strong style={{ color: 'var(--osd-accent)' }}>Probe-mediated saliency:</strong>{' class evidence may miss details needed for open-ended generation.'}</CompactBullet>
+        </ul>
+      </section>
+      <section style={{ minHeight: 330, padding: '42px 46px 34px 56px', background: `linear-gradient(135deg, ${amber}12, ${crimson}0C)`, borderTop: `4px solid var(--osd-accent)`, borderRadius: 'var(--osd-radius)', ...riseIn(0.42) }}>
+        <div style={{ height: 32, fontSize: 23, color: 'var(--osd-accent)', letterSpacing: '0.14em', textTransform: 'uppercase', fontWeight: 700, marginBottom: 28 }}>
+          Conclusion
+        </div>
+        <ul style={{ margin: 0, padding: 0 }}>
+          <CompactBullet delay={0.52}>Grad-CAM weighted tokens consistently outperform plain global MSE.</CompactBullet>
+          <CompactBullet delay={0.62}>Best result: <strong style={{ color: 'var(--osd-accent)' }}>explanation-only supervision</strong>.</CompactBullet>
+          <CompactBullet delay={0.72}>Gains show up as preserved local evidence and fewer visual-path failures.</CompactBullet>
+        </ul>
+      </section>
+      <p style={{ gridColumn: '1 / -1', margin: 0, paddingTop: 22, borderTop: `1px solid ${crimson}33`, fontSize: 31, lineHeight: 1.35, color: muted, ...riseIn(0.82) }}>
+        <strong style={{ color: 'var(--osd-accent)' }}>Next step:</strong>{' richer prompts, human evaluation, stronger adapters.'}
+      </p>
+    </div>
     <Footer />
   </div>
 );
@@ -796,7 +803,7 @@ const Thanks: Page = () => (
     <FlameBar />
     <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 800, height: 400, borderRadius: '50%', background: `radial-gradient(ellipse, ${amber}12, transparent 70%)`, animation: 'pulseGlow 4s ease-in-out infinite', pointerEvents: 'none' }} />
     <div style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
-      <img src={catImg} style={{ width: 160, height: 160, objectFit: 'contain', display: 'block', margin: '0 auto 30px', ...riseIn(0.1) }} alt="cat" />
+      <img src={catImg} style={{ width: 240, height: 240, objectFit: 'contain', display: 'block', margin: '0 auto 30px', ...riseIn(0.1) }} alt="cat" />
       <h2 style={{ fontFamily: 'var(--osd-font-display)', fontSize: 'var(--osd-size-hero)', fontWeight: 900, margin: 0, lineHeight: 1.08, ...riseIn(0.25) }}>Thank you</h2>
       <p style={{ fontSize: 40, color: muted, marginTop: 40, lineHeight: 1.5, ...riseIn(0.55) }}>Questions?</p>
       <div style={{ marginTop: 72, display: 'inline-block', height: 3, width: 200, background: `linear-gradient(90deg, ${amber}, ${crimson})`, ...fadeIn(0.8) }} />
@@ -838,7 +845,6 @@ export default [
   ObjectIdentitySlide,
   QualitativeLimitsSlide,
   RobustnessSlide,
-  Limitations,
-  Conclusion,
+  LimitationsAndConclusion,
   Thanks,
 ] satisfies Page[];
