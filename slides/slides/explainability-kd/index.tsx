@@ -740,7 +740,7 @@ const QualitativeLimitsSlide: Page = () => (
 
 const RobustnessSlide: Page = () => (
   <QualitativePatternSlide
-    title="Guidance avoids a visual-path failure"
+    title="Visual-path failure"
     image={qualTriceratopsSkeletonImg}
     imageAlt="Triceratops skeleton in an exhibition hall"
     comparison={qualitativeText.triceratops_skeleton}
