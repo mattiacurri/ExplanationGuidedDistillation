@@ -774,7 +774,6 @@ const LimitationsAndConclusion: Page = () => (
         <ul style={{ margin: 0, padding: 0 }}>
           <CompactBullet delay={0.4}><strong style={{ color: 'var(--osd-accent)' }}>Single VLM, single dataset:</strong>{' one Qwen teacher, Mini-ImageNet only.'}</CompactBullet>
           <CompactBullet delay={0.5}><strong style={{ color: 'var(--osd-accent)' }}>VLM judges:</strong>{' useful at scale, but not a substitute for human evaluation.'}</CompactBullet>
-          <CompactBullet delay={0.6}><strong style={{ color: 'var(--osd-accent)' }}>Probe-mediated saliency:</strong>{' class evidence may miss details needed for open-ended generation.'}</CompactBullet>
         </ul>
       </section>
       <section style={{ minHeight: 330, padding: '42px 46px 34px 56px', background: `linear-gradient(135deg, ${amber}12, ${crimson}0C)`, borderTop: `4px solid var(--osd-accent)`, borderRadius: 'var(--osd-radius)', ...riseIn(0.42) }}>
@@ -783,7 +782,6 @@ const LimitationsAndConclusion: Page = () => (
         </div>
         <ul style={{ margin: 0, padding: 0 }}>
           <CompactBullet delay={0.52}>Grad-CAM weighted tokens consistently outperform plain global MSE.</CompactBullet>
-          <CompactBullet delay={0.62}>Best result: <strong style={{ color: 'var(--osd-accent)' }}>explanation-only supervision</strong>.</CompactBullet>
           <CompactBullet delay={0.72}>Gains show up as preserved local evidence and fewer visual-path failures.</CompactBullet>
         </ul>
       </section>
