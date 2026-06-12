@@ -308,19 +308,19 @@ const SignalStage = ({
   </div>
 );
 
-const GradCAM: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
-    <FlameBar />
-    <Eyebrow>Methodology</Eyebrow>
-    <PageHeading>From explanation to token weights</PageHeading>
-    <div style={{ display: 'flex', gap: 22, alignItems: 'stretch', marginTop: 52, maxWidth: 1510 }}>
-      <SignalStage index="01 / frozen" title="Visual tokens" detail="Qwen map: 28 x 28" mode="tokens" delay={0.30} />
-      <SignalStage index="02 / attribute" title="Probe saliency" detail="Class-relevant regions" mode="saliency" delay={0.43} />
-      <SignalStage index="03 / align" title="Map alignment" detail="Saliency follows the new grid" mode="align" delay={0.56} />
-    </div>
-    <Footer />
-  </div>
-);
+// const GradCAM: Page = () => (
+//   <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
+//     <FlameBar />
+//     <Eyebrow>Methodology</Eyebrow>
+//     <PageHeading>From explanation to token weights</PageHeading>
+//     <div style={{ display: 'flex', gap: 22, alignItems: 'stretch', marginTop: 52, maxWidth: 1510 }}>
+//       <SignalStage index="01 / frozen" title="Visual tokens" detail="Qwen map: 28 x 28" mode="tokens" delay={0.30} />
+//       <SignalStage index="02 / attribute" title="Probe saliency" detail="Class-relevant regions" mode="saliency" delay={0.43} />
+//       <SignalStage index="03 / align" title="Map alignment" detail="Saliency follows the new grid" mode="align" delay={0.56} />
+//     </div>
+//     <Footer />
+//   </div>
+// );
 
 // ================================================================
 // PAGE 7 — Objectives
@@ -837,7 +837,7 @@ export default [
   Approach,
   Pipeline,
   TeacherProbes,
-  GradCAM,
+  // GradCAM,
   Objectives,
   ProbeResults,
   PrimaryResults,
