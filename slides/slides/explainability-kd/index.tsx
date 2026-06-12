@@ -154,36 +154,36 @@ const Motivation: Page = () => (
 // ================================================================
 // PAGE 3 — KD vs Our approach (uniform cards)
 // ================================================================
-const Approach: Page = () => (
-  <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
-    <FlameBar />
-    <Eyebrow>Introduction</Eyebrow>
-    <PageHeading>Saliency-weighted distillation</PageHeading>
-    <div style={{ display: 'flex', gap: 48, marginTop: 100, maxWidth: 1480, alignItems: 'stretch' }}>
-      {/* Standard KD */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', ...riseIn(0.35) }}>
-        <div style={{ fontSize: 26, color: muted, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 24 }}>Standard KD</div>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'rgba(140,123,108,0.08)', borderRadius: 'var(--osd-radius)', padding: '52px 44px', borderLeft: `4px solid ${muted}` }}>
-          <p style={{ fontSize: 35, lineHeight: 1.5, margin: 0, color: muted }}>Match every teacher feature equally, with no notion of which features actually drive the teacher's decisions.</p>
-        </div>
-      </div>
-      {/* Divider */}
-      <div style={{ display: 'flex', alignItems: 'center', flexShrink: 0, ...fadeIn(0.55) }}>
-        <div style={{ width: 44, height: 44, borderRadius: '50%', border: `3px solid ${amber}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, color: amber, fontWeight: 700 }}>→</div>
-      </div>
-      {/* Our approach */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', ...riseIn(0.65) }}>
-        <div style={{ fontSize: 26, color: 'var(--osd-accent)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 24 }}>Our approach</div>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', background: `linear-gradient(135deg, ${amber}0F, ${crimson}0F)`, borderRadius: 'var(--osd-radius)', padding: '52px 44px', borderLeft: `4px solid var(--osd-accent)` }}>
-          <p style={{ fontSize: 35, lineHeight: 1.5, margin: 0, color: 'var(--osd-text)' }}>
-            {'Use Grad-CAM to weight tokens; the student focuses on preserving what the teacher considers '}<strong style={{ color: 'var(--osd-accent)' }}>decision-relevant</strong>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <Footer />
-  </div>
-);
+// const Approach: Page = () => (
+//   <div style={{ ...fill, background: 'var(--osd-bg)', color: 'var(--osd-text)', padding: 120, position: 'relative' }}>
+//     <FlameBar />
+//     <Eyebrow>Introduction</Eyebrow>
+//     <PageHeading>Saliency-weighted distillation</PageHeading>
+//     <div style={{ display: 'flex', gap: 48, marginTop: 100, maxWidth: 1480, alignItems: 'stretch' }}>
+//       {/* Standard KD */}
+//       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', ...riseIn(0.35) }}>
+//         <div style={{ fontSize: 26, color: muted, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 24 }}>Standard KD</div>
+//         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'rgba(140,123,108,0.08)', borderRadius: 'var(--osd-radius)', padding: '52px 44px', borderLeft: `4px solid ${muted}` }}>
+//           <p style={{ fontSize: 35, lineHeight: 1.5, margin: 0, color: muted }}>Match every teacher feature equally, with no notion of which features actually drive the teacher's decisions.</p>
+//         </div>
+//       </div>
+//       {/* Divider */}
+//       <div style={{ display: 'flex', alignItems: 'center', flexShrink: 0, ...fadeIn(0.55) }}>
+//         <div style={{ width: 44, height: 44, borderRadius: '50%', border: `3px solid ${amber}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, color: amber, fontWeight: 700 }}>→</div>
+//       </div>
+//       {/* Our approach */}
+//       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', ...riseIn(0.65) }}>
+//         <div style={{ fontSize: 26, color: 'var(--osd-accent)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 24 }}>Our approach</div>
+//         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', background: `linear-gradient(135deg, ${amber}0F, ${crimson}0F)`, borderRadius: 'var(--osd-radius)', padding: '52px 44px', borderLeft: `4px solid var(--osd-accent)` }}>
+//           <p style={{ fontSize: 35, lineHeight: 1.5, margin: 0, color: 'var(--osd-text)' }}>
+//             {'Use Grad-CAM to weight tokens; the student focuses on preserving what the teacher considers '}<strong style={{ color: 'var(--osd-accent)' }}>decision-relevant</strong>.
+//           </p>
+//         </div>
+//       </div>
+//     </div>
+//     <Footer />
+//   </div>
+// );
 
 // ================================================================
 // PAGE 4 — Pipeline (image only)
@@ -834,7 +834,7 @@ export const meta: SlideMeta = {
 export default [
   Cover,
   Motivation,
-  Approach,
+  // Approach,
   Pipeline,
   TeacherProbes,
   // GradCAM,
